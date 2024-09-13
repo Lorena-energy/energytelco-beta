@@ -36,3 +36,18 @@ document.querySelector('form').addEventListener('submit', function(event) {
         width: 100%;  /* Hacer que los inputs ocupen todo el ancho en móviles */
     }
 }
+
+// Manejar la carga de la factura de energía
+document.getElementById('form-factura').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar el envío por defecto del formulario
+    
+    let archivo = document.getElementById('factura').files[0];
+    let consumo = document.getElementById('consumo').value;
+
+    if (archivo && consumo) {
+        alert("Factura subida correctamente. Estamos analizando la mejor oferta...");
+        // Aquí se puede agregar el código para enviar el archivo al servidor o backend
+    } else {
+        alert("Por favor, sube tu factura y proporciona el consumo estimado.");
+    }
+});
